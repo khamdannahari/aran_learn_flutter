@@ -11,18 +11,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int number = 0;
 
-  void addNumber() {
-    setState(() {
-      number++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("06 Stateless & Stateful Widget"),
+          title: Text("07 Anonymous Method"),
         ),
         body: Center(
           child: Column(
@@ -34,7 +28,11 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 child: Text("Add Number"),
-                onPressed: addNumber,
+                onPressed: () { //this is anonymous method
+                  setState(() { //this is also anonymous method
+                    number++;
+                  });
+                },
               )
             ],
           ),
