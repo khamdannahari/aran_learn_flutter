@@ -3,32 +3,43 @@ import 'package:flutter/cupertino.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int number = 0;
+
+  void addNumber() {
+    setState(() {
+      number++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("05 Container Widget"),
+        appBar: AppBar(
+          title: Text("06 Stateless & Stateful Widget"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                number.toString(),
+                style: TextStyle(fontSize: 10 + number.toDouble()),
+              ),
+              RaisedButton(
+                child: Text("Add Number"),
+                onPressed: addNumber,
+              )
+            ],
           ),
-          body: Container(
-            color: Colors.red,
-            margin: EdgeInsets.fromLTRB(10, 15, 20, 25),
-            padding: EdgeInsets.only(bottom: 20, top: 20),
-            child: Container(
-              margin: EdgeInsets.all(10),
-//              decoration: BoxDecoration(color: Colors.blue),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[
-                    Colors.amber,
-                    Colors.blue,
-                  ])),
-            ),
-          )),
+        ),
+      ),
     );
   }
 }
