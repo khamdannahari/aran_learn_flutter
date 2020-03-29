@@ -19,24 +19,18 @@ class _MyAppState extends State<MyApp> {
           title: Text("07 Anonymous Method"),
         ),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                number.toString(),
-                style: TextStyle(fontSize: 10 + number.toDouble()),
+            child: Text(
+          "Ini adalah text style",
+          style: TextStyle(
+              fontFamily: "Lato-Black",
+              fontSize: 30,
+              fontStyle: FontStyle.italic,
+              decoration: TextDecoration.overline,
+              decorationColor: Colors.red,
+              decorationThickness: 5,
+              decorationStyle: TextDecorationStyle.wavy //gelombang
               ),
-              RaisedButton(
-                child: Text("Add Number"),
-                onPressed: () { //this is anonymous method
-                  setState(() { //this is also anonymous method
-                    number++;
-                  });
-                },
-              )
-            ],
-          ),
-        ),
+        )),
       ),
     );
   }
