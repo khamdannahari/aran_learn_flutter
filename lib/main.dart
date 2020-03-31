@@ -19,23 +19,47 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text("10 Animated Container"),
+              title: Text("11 Flexible Widget"),
             ),
-            body: Center(
-              child: GestureDetector(
-                onTap: (){
-                  setState(() {
-
-                  });
-                },
-                child: AnimatedContainer(
-                  color: Color.fromARGB(255, random.nextInt(256),
-                      random.nextInt(256), random.nextInt(256)),
-                  duration: Duration(seconds: 1),
-                  width: 50.0 + random.nextInt(101),
-                  height: 50.0 + random.nextInt(101),
-                ),
-              ),
+            body: Column(
+              children: <Widget>[
+                Flexible(
+                    flex: 1,
+                    child: Row(
+                      children: <Widget>[
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.red,
+                              margin: EdgeInsets.all(5),
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.amber,
+                              margin: EdgeInsets.all(5),
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              color: Colors.blue,
+                              margin: EdgeInsets.all(5),
+                            )),
+                      ],
+                    )),
+                Flexible(
+                    flex: 2,
+                    child: Container(
+                      color: Colors.amber,
+                      margin: EdgeInsets.all(5),
+                    )),
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.blue,
+                      margin: EdgeInsets.all(5),
+                    )),
+              ],
             )));
   }
 }
