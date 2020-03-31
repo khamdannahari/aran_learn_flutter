@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
@@ -10,72 +12,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> widgets = [];
-  int counter = 1;
-
-  /*_MyAppState() {
-    for (int i = 0; i < 15; i++) {
-      widgets.add(Text(
-        "Data " + i.toString(),
-        style: TextStyle(fontSize: 45),
-      ));
-    }
-  }*/
+  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text("08 List View"),
-          ),
-          body:
-              /* Column(
-            */ /* children: <Widget>[
-              Text("Data ke 1"),
-              Text("Data ke 2"),
-              Text("Data ke 3"),
-              Text("Data ke 4"),
-              Text("Data ke 5")
-            ],*/ /*
-            children: widgets,
-          )*/
-              ListView(
-            /*children: widgets,*/
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                //sisa space dibagirata
-                children: <Widget>[
-                  RaisedButton(
-                    child: Text("Tambah Data"),
-                    onPressed: () {
-                      setState(() {
-                        widgets.add(Text(
-                          "Data " + counter.toString(),
-                          style: TextStyle(fontSize: 35),
-                        ));
-                        counter++;
-                      });
-                    },
-                  ),
-                  RaisedButton(
-                    child: Text("Hapus Data"),
-                    onPressed: () {
-                      setState(() {
-                        widgets.removeLast();
-                        counter--;
-                      });
-                    },
-                  ),
-                ],
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text("10 Animated Container"),
+            ),
+            body: Center(
+              child: GestureDetector(
+                onTap: (){
+                  setState(() {
+
+                  });
+                },
+                child: AnimatedContainer(
+                  color: Color.fromARGB(255, random.nextInt(256),
+                      random.nextInt(256), random.nextInt(256)),
+                  duration: Duration(seconds: 1),
+                  width: 50.0 + random.nextInt(101),
+                  height: 50.0 + random.nextInt(101),
+                ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: widgets,
-              )
-            ],
-          )),
-    );
+            )));
   }
 }
