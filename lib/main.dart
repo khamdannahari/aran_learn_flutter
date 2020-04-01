@@ -6,149 +6,34 @@ import 'package:flutter/widgets.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Random random = Random();
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text("11 Flexible Widget"),
-      ),
-      body: Stack(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Flexible(
-                flex: 1,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.white,
-                      ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.black12,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Flexible(
-                flex: 1,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.black12,
-                      ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          ListView(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                child: Text(
-                  "Ini adalah text yg ada di tengah dari stack",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ),
-            ],
-          ),
-          /*Align(
-              alignment: Alignment.topCenter,
-              child: RaisedButton(
-                child: Text("My Button"),
-                color: Colors.amber,
-                onPressed: () {},
-              )),*/
-          Align(
-              alignment: Alignment(0.9,0.9),
-              child: RaisedButton(
-                child: Text("My Button"),
-                color: Colors.amber,
-                onPressed: () {},
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Latihan image"),
+        ),
+        body: Center(
+          child: Container(
+              color: Colors.black,
+              width: 200,
+              height: 200,
+              padding: EdgeInsets.all(10),
+              child: Image(
+                /*image: NetworkImage(
+                  "https://m.ayobandung.com/images-bandung/post/articles/2019/09/09/63113/blackpink_2.jpg"),
+//              fit: BoxFit.none, //menapilkan ukuran gambar aslinya
+              fit: BoxFit.contain,
+              //menyesuaikan ukuran container, rasio masih spt aslinya
+//              fit: BoxFit.cover, //menyesuaikan ukuran container, rasio masih spt aslinya, tidak meninggalkan runag kosong dr container, (center crop)
+//              fit: BoxFit.fill, //menyesuaikan ukuran container, rasio tidak spt aslinya, tidak meninggalkan runag kosong dr container
+              repeat: ImageRepeat.repeat,
+            ),*/
+                image: AssetImage("images/arancrop.png"),
               )),
-
-        ],
+        ),
       ),
-    ));
+    );
   }
 }
